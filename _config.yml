@@ -11,10 +11,7 @@ site-twitter: #if your site has a twitter account, enter it here
 # Author Settings
 author: Sloan Lii # add your name
 author-img: profile.png # add your photo
-about-author: |
-Node.js 백엔드 개발자. 서울러. 
-
-주체적인 개발자가 되려고 방황 중. # add description
+about-author: Node.js 백엔드 개발자. 서울러. 주체적인 개발자가 되려고 방황 중. # add description
 social-twitter: # add your Twitter handle
 social-facebook: # add your Facebook handle
 social-github: sloan-lii # add your Github handle

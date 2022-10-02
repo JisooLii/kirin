@@ -1,37 +1,76 @@
-title: Hello, world! I'm David Freeman
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-permalink: ":title/"
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-site-twitter: #if your site has a twitter account, enter it here
+# ----
+# Site
 
-# Author Settings
-author: Sloan Lii # add your name
-author-img: profile.jpg # add your photo
-about-author: Node.js 백엔드 개발자. 서울러. 주체적인 개발자가 되려고 방황 중. # add description
-social-twitter: # add your Twitter handle
-social-facebook: # add your Facebook handle
-social-github: sloan-lii # add your Github handle
-social-linkedin: # add your Linkedin handle
-social-email: jisoo.dev@gmail.com # add your Email address
+title: Edition Template
+url: "https://long-pig.cloudvent.net"
+baseurl:
+google_analytics_key:
+show_full_navigation: true
 
-# Disqus
-discus-identifier: mr-brown # add your discus identifier
+# Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
+logo: /favicon.ico
+description: Product documentation template for Jekyll.
+author:
+  name: Sloan Lii
+  email: jisoo.dev@gmail.com
+  twitter: # twitter username without the @ symbol
+social:
+  name: Edition Template
+  links:
+    - https://github.com/sloan-lii
 
-# Tracker
-analytics: # Google Analytics
+# -----
+# Build
 
-# Build Settings
-markdown: kramdown
+timezone: Asia/Seoul
+
+permalink: pretty
+
 plugins:
   - jekyll-sitemap
-  - jekyll-paginate
-  - jemoji
+  - jekyll-seo-tag
+  - jekyll-feed
 
-paginate: 8
-paginate_path: "/page/:num"
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENCE
 
-exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
+collections:
+  docs:
+    title: Documentation
+    permalink: /:path/
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      seo:
+        type: Article
+      _comments:
+        category: Group navigation links with this field
+        order: Used to sort links in the navigation
+      _options:
+        content:
+          width: 800
+          height: 2000
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      _comments:
+        type: Marks the impact of this release
+
+# -----------
+# CloudCannon
+
+types:
+  - minor
+  - major
